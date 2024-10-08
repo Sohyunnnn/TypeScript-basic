@@ -59,3 +59,40 @@ let mySize2 : [number,number] = [167,28];
 // mySize2= [255];
 // mySize2=[];
 // 개수나 타입이 다르면 오류가 남.
+
+//09 객체 타입
+
+let product9 : {
+  id: string;
+  name: string;
+  price: number;
+  membersOnly?: boolean; // optional property
+  size: string[];
+}={
+  id: 'c001',
+  name: '블랙 후디',
+  price: 12900,
+  size: ['M','L','XL'],
+};
+
+
+if (product9.membersOnly){
+  console.log('회원 전용 상품');
+} else{
+  console.log('일반 상품');
+}
+
+//js 중 객체에 값을 할당할 때 프로퍼티 이름에 변수를 쓰고 싶으면 대괄호를 씀.
+let field = 'field name';
+let obj ={
+  [field]: 'field value',
+};
+
+// 프로퍼티의 개수를 알 수 없거나 개수를 정해 놓고 싶지 않은 경우 
+let stock : {
+  [id: string]: number; //프로퍼티 이름으로 아무 문자열이나 쓸 수 있도록 정함. 
+} ={
+  c001: 1,
+  c002: 3,
+  c003: 8,
+}
